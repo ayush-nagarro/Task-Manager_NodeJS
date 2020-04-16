@@ -2,10 +2,10 @@ const Sequelize = require('sequelize')
 
 const db = new Sequelize({
     dialect: 'sqlite',
-    storage: __dirname + '/todos.db'
+    storage: __dirname + '/tasks.db'
 })
 
-const Todos = db.define('todo', {
+const Tasks = db.define('task', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -15,13 +15,8 @@ const Todos = db.define('todo', {
         type: Sequelize.STRING(100),
         allowNull: false
     },
-    Description: {
+    description: {
         type: Sequelize.STRING(256),
-    },
-    done: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false
     },
     due: {
         type: Sequelize.DATE,
@@ -29,11 +24,10 @@ const Todos = db.define('todo', {
     },
     priority: {
         type: Sequelize.STRING(10),
-        defaultValue: "Medium"
+        allowNull: false
     },
     completed: {
         type: Sequelize.BOOLEAN,
-        allowNull: false,
         defaultValue: false
     }
 })
@@ -41,7 +35,10 @@ const Todos = db.define('todo', {
 const Notes = db.define('notes', {
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
+        primaryKey: true
+    },
+    task: {
+        type: Sequelize.STRING(100),
         allowNull: false
     },
     note: {
@@ -51,5 +48,5 @@ const Notes = db.define('notes', {
 })
 
 module.exports = {
-    db, Todos, Notes
+    db, Tasks, Notes
 }

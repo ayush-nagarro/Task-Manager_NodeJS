@@ -14,6 +14,26 @@
 <body>
     <div class="jumbotron text-center">
         <h1>Task Manager</h1>
-      </div>
+        <hr>
+        <form>
+            <h3 style="text-decoration: underline;">Add a Task</h3>
+            <input class="form-control mb-2 mr-sm-2" type="text" name="task" id="task" placeholder="Task Name" required>
+            <input class="form-control mb-2 mr-sm-2" type="text" name="desc" id="desc" placeholder="Task Description">
+            <div class="form-inline">
+                &emsp;&emsp;&emsp;&emsp;
+                Due Date:&emsp;
+                <input class="form-control mb-2 mr-sm-2" type="date" name="dueDate" id="due" required>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                Priority:&emsp;
+                <select class="form-control mb-2 mr-sm-2" name="priority" id="priority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <button class="form-control mb-2 mr-sm-2" type="submit" id="submit" onclick="addTask()">ADD TASK</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
