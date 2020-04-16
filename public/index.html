@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script async defer src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -34,6 +34,10 @@
                 <button class="form-control mb-2 mr-sm-2" type="submit" id="submit" onclick="addTask()">ADD TASK</button>
             </div>
         </form>
+        <br><br>
+        <h3 style="text-decoration: underline;">Tasks</h3>
+        <ul class="list-group" id="ulTaskList">
+        </ul>
     </div>
 </body>
 </html>
