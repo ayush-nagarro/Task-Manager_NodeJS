@@ -1,6 +1,6 @@
-const sequelize = require('sequelize')
+const Sequelize = require('sequelize')
 
-const db = new sequelize({
+const db = new Sequelize({
     dialect: 'sqlite',
     storage: __dirname + '/todos.db'
 })
@@ -28,11 +28,11 @@ const Todos = db.define('todo', {
         allowNull: false
     },
     priority: {
-        type: sequelize.STRING(10),
+        type: Sequelize.STRING(10),
         defaultValue: "Medium"
     },
     completed: {
-        type: sequelize.BOOLEAN,
+        type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false
     }
